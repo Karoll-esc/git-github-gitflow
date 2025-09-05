@@ -478,4 +478,62 @@ Cuando quieres probar algo sin arruinar tu área de trabajo
 Puedes guardar tu avance, hacer pruebas, y luego recuperar tu trabajo original.
 
 
+Manual de Buenas Prácticas en Git y GitHub
+
+Este manual tiene como objetivo unificar el trabajo en equipo, mantener la organización del código y facilitar la colaboración en proyectos.
+
+1. Configuración inicial
+Configura tu usuario y correo:
+git config --global user.name "Tu Nombre"
+git config --global user.email "tu_correo@example.com"
+Usa una clave SSH o un token personal para conectarte a GitHub de forma segura.
+
+ 2. Flujo de trabajo recomendado
+Crear una rama (branch) para cada tarea/funcionalidad:
+git checkout -b feature/nueva-funcionalidad
+Realizar commits pequeños y frecuentes.
+      Usa mensajes claros:
+git commit -m "fix: corrige error en login"
+git commit -m "feat: agrega validación de correo"
+Actualizar tu rama antes de hacer merge:
+git pull origin develop
+Hacer Pull Request (PR) para revisión antes de integrar cambios.
+
+ 3. Nombres y ramas
+main/master → Rama principal, siempre estable.
+develop → Rama de desarrollo.
+feature/ → Funcionalidades nuevas.
+hotfix/ → Corrección rápida en producción.
+Ejemplo:
+feature/agregar-login
+hotfix/correccion-bug-404
+
+ 4. Buenas prácticas de commits
+Usa verbos en infinitivo: add, update, fix, remove.
+Un commit debe reflejar un cambio lógico completo, no varios temas mezclados.
+Evita mensajes genéricos como "arreglos" o "cambios".
+
+5. Pull Requests
+Antes de abrir un PR:
+Verifica que el código compile y pase pruebas.
+Revisa que no existan archivos innecesarios (ejemplo: temporales, env).
+Asigna revisores y explica brevemente el cambio en la descripción.
+
+ 6. Archivos a ignorar
+Usa .gitignore para evitar subir:
+Archivos temporales del editor (ej: .vscode/, .idea/).
+Dependencias (node_modules/, vendor/).
+Credenciales o configuraciones locales (.env).
+
+ 7. Comunicación y colaboración
+Sincroniza cambios con frecuencia:
+git pull origin develop
+Documenta lo necesario en el README del proyecto.
+Pregunta antes de hacer cambios grandes que afecten a todo el equipo.
+
+Siguiendo estas prácticas lograremos un proyecto organizado, seguro y fácil de mantener.
+
+
+
+
 
